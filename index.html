@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>work</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        outline: 0;
+        font-family: "Cinzel Decorative", cursive;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number]{
+        -moz-appearance: textfield;
+      }
+      #card {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: hsl(182, 100%, 75%);
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 25rem;
+        box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 3rem 1.5rem 1.5rem;
+      }
+      form label {
+        margin-bottom: 0.5rem;
+        font-size: 20px;
+      }
+      form input {
+        margin-bottom: 1rem;
+        padding: 5px;
+      }
+      form button {
+        margin: 1rem auto 0;
+        padding: 0.5rem 2rem;
+      }
+      form h1 {
+        margin: 1rem auto 0;
+        font-size: 35px;
+      }
+
+      @media (min-width: 320px) and (max-width: 575.98px){
+        form {
+          width: 15rem;
+          padding: 2rem 1.5rem 1rem;
+        }
+        form label {
+          font-size: 16px;
+        }
+        form h1 {
+          margin: 1rem auto 0;
+          font-size: 23px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="card">
+      <form action="">
+        <label class="age_label" for="age">What is your Age?</label>
+        <input class="age_input" id="age" type="number" />
+
+        <label class="job_label" for="job">Do you have Job?</label>
+        <input class="job_input" id="job" type="text" data-="true" />
+
+        <label class="salary_lebel" for="salary">What is your salary?</label>
+        <input class="salary_input" id="salary" type="number" />
+
+        <button class="check_btn" type="button">Check</button>
+
+        <h1 class="result">Result</h1>
+      </form>
+    </section>
+
+    <script>
+      // variables
+      let age = document.querySelector(".age_input");
+      let job = document.querySelector(".job_input");
+      let salary = document.querySelector(".salary_input");
+      let button = document.querySelector(".check_btn");
+      let result = document.querySelector(".result");
+
+      // button event lister
+      button.addEventListener("click", function () {
+        if (age.value >= 18 && age.value < 40) {
+          if (job.value.toLowerCase() === "yes") {
+            if (salary.value >= 20000) {
+              result.innerHTML = "Badhai ho bete";
+              result.style.color = "green";
+            } else {
+              result.innerHTML = "Age income barao";
+              result.style.color = "yellow";
+            }
+          } else {
+            result.innerHTML = "MEYER BABA JUTA PITA KORBE";
+            result.style.color = "red";
+          }
+        } else if (age.value >= 40) {
+          result.innerHTML = "Ebar Asha Charo";
+          result.style.color = "purple";
+        } else {
+          result.innerHTML = "Dure ja shala";
+          result.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>
