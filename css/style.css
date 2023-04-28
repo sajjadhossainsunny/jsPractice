@@ -9,7 +9,8 @@
     font-weight: 700;
     color: #555;
     margin-bottom: 2rem;
-    text-decoration: underline
+    text-decoration: underline;
+    text-align: center;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
@@ -96,33 +97,33 @@ input[type=number]{
 
 @media (min-width: 320px) and (max-width: 575.98px){
     .title{
-        font-size: 20px;
+        font-size: 25px;
         margin-bottom: 1rem;
+        width: 260px;
     }
     #card .form {
-        width: 12rem;
-        padding: 1.5rem 1rem;
+        width: 19rem;
+        padding: 3rem 1.5rem 2rem;
     }
     #card .form .label {
-        font-size: 12px;
+        font-size: 16px;
         margin-bottom: 0;
     }
     #card .form .input {
         margin-bottom: .5rem;
-        padding: 0;
         font-weight: 300;
     }
     #card .form .result {
         margin: 1rem auto 0;
-        font-size: 16px;
+        font-size: 26px;
     }
     #card .form .check_btn {
         margin: .5rem auto 0;
-        padding: 0.2rem .5rem;
+        padding: .5rem 2rem;
     }
 
     #count_part .hello {
-        width: 80px;
+        width: 100px;
         height: 70px;
         margin: .3rem;
         border-radius: .5rem;
