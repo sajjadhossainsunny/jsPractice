@@ -6,12 +6,18 @@ let button = document.querySelector(".check_btn");
 let result = document.querySelector(".result");
 
 // button event listener
+age.value = "";
+job.value = "";
+salary.value = "";
 button.addEventListener("click", function () {
   if (age.value >= 18 && age.value < 40) {
     if (job.value.toLowerCase() === "yes") {
       if (salary.value >= 20000) {
         result.innerHTML = "Badhai ho bete";
         result.style.color = "green";
+        age.value = "";
+        job.value = "";
+        salary.value = "";
       } else {
         result.innerHTML = "Age income barao";
         result.style.color = "yellow";
@@ -32,21 +38,21 @@ button.addEventListener("click", function () {
 
 
 let counter = document.querySelectorAll(".count");
-let cusarr = Array.from(counter);
+let arr = Array.from(counter);
 
-cusarr.map((items)=>{
+arr.map((items) => {
   let count = 0;
 
   function counterUp() {
     count++
     items.innerHTML = count;
-  
-    if (count == items.dataset.change){
+
+    if (count == items.dataset.change) {
       clearInterval(stop);
     }
   }
-  
-  let stop = setInterval(function(){
+
+  let stop = setInterval(function () {
     counterUp();
   }, 1000 / items.dataset.change);
 });
